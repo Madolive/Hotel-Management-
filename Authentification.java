@@ -4,6 +4,11 @@
  */
 package licenceproject;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
@@ -33,8 +38,8 @@ public class Authentification extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        Email = new javax.swing.JTextField();
-        Password = new javax.swing.JPasswordField();
+        email = new javax.swing.JTextField();
+        password = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -94,8 +99,8 @@ public class Authentification extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(93, 93, 93)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Password, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
-                            .addComponent(Email)))
+                            .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                            .addComponent(email)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(137, 137, 137)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -111,11 +116,11 @@ public class Authentification extends javax.swing.JFrame {
                 .addGap(104, 104, 104)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Email))
+                    .addComponent(email))
                 .addGap(55, 55, 55)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -152,35 +157,67 @@ public class Authentification extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Email.setText("");
-        Password.setText("");
+        email.setText("");
+        password.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         try{
-        String m= Email.getText();
-        String p= Password.getText();
+     try{
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/PROJET_LICENCE", "root", "");
         
-        if(m.equals("") && p.equals("")){
+        String query1 = "select * from Agent_reservation";
+        PreparedStatement statement1 = con.prepareStatement(query1);
+        
+        String query2 = "select * from Directeur";
+        PreparedStatement statement2 = con.prepareStatement(query2);
+        
+        String m= email.getText();
+        String p= password.getText();
+        
+        ResultSet result1;
+        result1 = statement1.executeQuery(query1);
+        
+         ResultSet result2;
+        result2 = statement2.executeQuery(query2);
+            
+            while(result1.next() && result2.next()){
+                
+                String email1 = result1.getString("email");
+                String password1= result1.getString("password");
+                
+                String email2 = result2.getString("email");
+                String password2= result2.getString("password");
+                
+                 if(m.equals("") && p.equals("")){
                  JOptionPane.showMessageDialog(null, "Champs non remplis");
-             }
-             else if(m.equals("") || p.equals("")){
+                 }
+                 else if(m.equals("") || p.equals("")){
                  JOptionPane.showMessageDialog(null, "Un champ est non rempli");
+                 }
+           
+                 else if(m.contentEquals(email1) && p.contentEquals(password1)){
+                    JOptionPane.showMessageDialog(null,"Vous êtes connectés en tant qu'agent de réservation");
+                    Authentification.super.dispose();
+                    new PageAccueil().setVisible(true);
+                  }
+                 else if(m.contentEquals(email2) && p.contentEquals(password2)){
+                    JOptionPane.showMessageDialog(null,"Vous êtes connectés en tant que Directeur");
+                    Authentification.super.dispose();
+                    new AccueilDirecteur().setVisible(true);
+                  }
+        
+        
+                
+                else{
+                  JOptionPane.showMessageDialog(null, "Informations incorrectes");
+                 }   
              }
-             else if(m.equals("gerant@gmail.com") && p.equals("admin"))
-             {
-                 JOptionPane.showMessageDialog(null, "Connexion réussie");
-                Authentification.super.dispose();
-                 new PageAccueil().setVisible(true);
-             }
-             else{
-                 JOptionPane.showMessageDialog(null, "Informations incorrectes");
-             }   
              }catch(Exception e){
                  e.printStackTrace();
              }
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
@@ -217,8 +254,7 @@ public class Authentification extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Email;
-    private javax.swing.JPasswordField Password;
+    private javax.swing.JTextField email;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -226,5 +262,6 @@ public class Authentification extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField password;
     // End of variables declaration//GEN-END:variables
 }
