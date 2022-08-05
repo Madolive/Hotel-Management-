@@ -50,7 +50,7 @@ public class Authentification extends javax.swing.JFrame {
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0,80));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0,200));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel2.setFont(new java.awt.Font("LM Roman Demi 10", 3, 36)); // NOI18N
@@ -198,13 +198,16 @@ public class Authentification extends javax.swing.JFrame {
            
                  else if(m.contentEquals(email1) && p.contentEquals(password1)){
                     JOptionPane.showMessageDialog(null,"Vous êtes connectés en tant qu'agent de réservation");
-                    Authentification.super.dispose();
-                    new PageAccueil().setVisible(true);
+                     PageAccueil Page =new PageAccueil();
+                     Page.setVisible(true);
+                     this.setVisible(false);
                   }
                  else if(m.contentEquals(email2) && p.contentEquals(password2)){
                     JOptionPane.showMessageDialog(null,"Vous êtes connectés en tant que Directeur");
-                    Authentification.super.dispose();
-                    new AccueilDirecteur().setVisible(true);
+                    
+                     AccueilDirecteur Acc= new AccueilDirecteur();
+                     Acc.setVisible(true);
+                     this.setVisible(false);
                   }
         
         
