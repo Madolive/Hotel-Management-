@@ -4,6 +4,7 @@
  */
 package licenceproject;
 
+import java.awt.Color;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -164,18 +165,18 @@ public class PageAccueil extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jPanel47 = new javax.swing.JPanel();
-        jTextField34 = new javax.swing.JTextField();
-        jTextField35 = new javax.swing.JTextField();
-        jTextField36 = new javax.swing.JTextField();
-        jTextField37 = new javax.swing.JTextField();
+        IdChambre_mod = new javax.swing.JTextField();
+        Categorie_mod = new javax.swing.JTextField();
+        Type_mod = new javax.swing.JTextField();
+        Prix_mod = new javax.swing.JTextField();
         jPanel48 = new javax.swing.JPanel();
         jButton21 = new javax.swing.JButton();
         jButton22 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
-        jTextField38 = new javax.swing.JTextField();
+        chamRech_mod = new javax.swing.JTextField();
         jPanel49 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        table7 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jPanel13 = new javax.swing.JPanel();
@@ -355,10 +356,78 @@ public class PageAccueil extends javax.swing.JFrame {
 
         jPanel30.setBackground(new java.awt.Color(102, 255, 167));
         jPanel30.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel30.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jPanel30FocusGained(evt);
+            }
+        });
 
         Id_Client.setEditable(false);
 
+        Nom.setForeground(new java.awt.Color(153, 153, 153));
+        Nom.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                NomFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                NomFocusLost(evt);
+            }
+        });
+        Nom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NomMouseClicked(evt);
+            }
+        });
+        Nom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NomActionPerformed(evt);
+            }
+        });
+
+        Prenoms.setForeground(new java.awt.Color(153, 153, 153));
+        Prenoms.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                PrenomsFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                PrenomsFocusLost(evt);
+            }
+        });
+        Prenoms.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrenomsActionPerformed(evt);
+            }
+        });
+
+        Telephone.setForeground(new java.awt.Color(153, 153, 153));
+        Telephone.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                TelephoneFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                TelephoneFocusLost(evt);
+            }
+        });
+
+        Adresse.setForeground(new java.awt.Color(153, 153, 153));
+        Adresse.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                AdresseFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                AdresseFocusLost(evt);
+            }
+        });
+
         Sexe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Masculin", "Feminin" }));
+        Sexe.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                SexeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                SexeFocusLost(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -557,6 +626,8 @@ public class PageAccueil extends javax.swing.JFrame {
         jPanel34.setBackground(new java.awt.Color(102, 255, 167));
         jPanel34.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        IdClient_mod.setEditable(false);
+
         Nom_mod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nom_modActionPerformed(evt);
@@ -637,6 +708,11 @@ public class PageAccueil extends javax.swing.JFrame {
 
         jButton11.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton11.setText("RECHERCHER");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
@@ -684,6 +760,11 @@ public class PageAccueil extends javax.swing.JFrame {
 
             }
         ));
+        table6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table6MouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(table6);
 
         javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
@@ -711,13 +792,13 @@ public class PageAccueil extends javax.swing.JFrame {
                     .addGroup(jPanel32Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
             .addGroup(jPanel32Layout.createSequentialGroup()
                 .addGap(182, 182, 182)
                 .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(1005, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -784,6 +865,22 @@ public class PageAccueil extends javax.swing.JFrame {
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
+            }
+        });
+
+        Client_rech.setForeground(new java.awt.Color(153, 153, 153));
+        Client_rech.setText("Entrez l'id du client à rechercher");
+        Client_rech.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Client_rechFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Client_rechFocusLost(evt);
+            }
+        });
+        Client_rech.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Client_rechActionPerformed(evt);
             }
         });
 
@@ -917,6 +1014,21 @@ public class PageAccueil extends javax.swing.JFrame {
             }
         });
 
+        client_supp.setText("Entrez l'id du client à supprimer");
+        client_supp.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                client_suppFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                client_suppFocusLost(evt);
+            }
+        });
+        client_supp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                client_suppActionPerformed(evt);
+            }
+        });
+
         jButton3.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
         jButton3.setText("QUITTER");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -932,9 +1044,9 @@ public class PageAccueil extends javax.swing.JFrame {
             .addGroup(jPanel26Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addGap(38, 38, 38)
                 .addComponent(client_supp, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addContainerGap(38, Short.MAX_VALUE))
             .addGroup(jPanel26Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -945,17 +1057,15 @@ public class PageAccueil extends javax.swing.JFrame {
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel26Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(client_supp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel26Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(client_supp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 21, Short.MAX_VALUE))
+                .addGap(0, 19, Short.MAX_VALUE))
         );
 
         table4.setModel(new javax.swing.table.DefaultTableModel(
@@ -1269,6 +1379,16 @@ public class PageAccueil extends javax.swing.JFrame {
             }
         });
 
+        chambre_rech.setText("Entrez l'id de la chambre");
+        chambre_rech.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                chambre_rechFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                chambre_rechFocusLost(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
         jPanel43.setLayout(jPanel43Layout);
         jPanel43Layout.setHorizontalGroup(
@@ -1281,11 +1401,14 @@ public class PageAccueil extends javax.swing.JFrame {
                     .addGroup(jPanel43Layout.createSequentialGroup()
                         .addGap(67, 67, 67)
                         .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(37, 37, 37)
                 .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chambre_rech, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(66, Short.MAX_VALUE))
+                    .addGroup(jPanel43Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel43Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(chambre_rech, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         jPanel43Layout.setVerticalGroup(
             jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1426,6 +1549,8 @@ public class PageAccueil extends javax.swing.JFrame {
         jPanel47.setBackground(new java.awt.Color(102, 255, 167));
         jPanel47.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        IdChambre_mod.setEditable(false);
+
         javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
         jPanel47.setLayout(jPanel47Layout);
         jPanel47Layout.setHorizontalGroup(
@@ -1433,24 +1558,24 @@ public class PageAccueil extends javax.swing.JFrame {
             .addGroup(jPanel47Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(IdChambre_mod, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Categorie_mod, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Type_mod, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Prix_mod, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel47Layout.setVerticalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel47Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(IdChambre_mod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Categorie_mod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Type_mod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
-                .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(Prix_mod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         jPanel48.setBackground(new java.awt.Color(102, 255, 167));
@@ -1458,6 +1583,11 @@ public class PageAccueil extends javax.swing.JFrame {
 
         jButton21.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
         jButton21.setText("MODIFIER");
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
 
         jButton22.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton22.setText("ANNULER");
@@ -1469,6 +1599,11 @@ public class PageAccueil extends javax.swing.JFrame {
 
         jButton23.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton23.setText("RECHERCHER");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel48Layout = new javax.swing.GroupLayout(jPanel48);
         jPanel48.setLayout(jPanel48Layout);
@@ -1480,7 +1615,7 @@ public class PageAccueil extends javax.swing.JFrame {
                     .addGroup(jPanel48Layout.createSequentialGroup()
                         .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(chamRech_mod, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel48Layout.createSequentialGroup()
                         .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
@@ -1497,30 +1632,27 @@ public class PageAccueil extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton23, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(jTextField38))
+                    .addComponent(chamRech_mod))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        table7.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Id_Chambre", "Catégorie", "Type", "Prix_Journalier"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
-            };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+            }
+        ));
+        table7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table7MouseClicked(evt);
             }
         });
-        jScrollPane5.setViewportView(jTable5);
+        jScrollPane5.setViewportView(table7);
 
         javax.swing.GroupLayout jPanel49Layout = new javax.swing.GroupLayout(jPanel49);
         jPanel49.setLayout(jPanel49Layout);
@@ -1734,6 +1866,11 @@ public class PageAccueil extends javax.swing.JFrame {
 
         jButton25.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton25.setText("ANNULER");
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
 
         jButton26.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton26.setText("QUITTER");
@@ -1880,6 +2017,8 @@ public class PageAccueil extends javax.swing.JFrame {
 
         jPanel58.setBackground(new java.awt.Color(102, 255, 167));
         jPanel58.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jTextField42.setEditable(false);
 
         javax.swing.GroupLayout jPanel58Layout = new javax.swing.GroupLayout(jPanel58);
         jPanel58.setLayout(jPanel58Layout);
@@ -2078,6 +2217,16 @@ public class PageAccueil extends javax.swing.JFrame {
             }
         });
 
+        res_rech.setText("Entrez l'id de la réservation");
+        res_rech.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                res_rechFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                res_rechFocusLost(evt);
+            }
+        });
+
         jButton31.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton31.setText("QUITTER");
         jButton31.addActionListener(new java.awt.event.ActionListener() {
@@ -2101,8 +2250,8 @@ public class PageAccueil extends javax.swing.JFrame {
             .addGroup(jPanel62Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(res_rech, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(res_rech, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel62Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
@@ -2159,12 +2308,13 @@ public class PageAccueil extends javax.swing.JFrame {
             .addGroup(jPanel61Layout.createSequentialGroup()
                 .addGroup(jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel61Layout.createSequentialGroup()
-                        .addGap(210, 210, 210)
-                        .addComponent(jPanel62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel61Layout.createSequentialGroup()
-                        .addGap(354, 354, 354)
-                        .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                        .addGap(148, 148, 148)
+                        .addComponent(jPanel62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel61Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(196, 196, 196)))
                 .addComponent(jPanel63, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(12, 12, 12))
         );
@@ -2176,9 +2326,9 @@ public class PageAccueil extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel61Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
+                        .addGap(82, 82, 82)
                         .addComponent(jLabel56)
-                        .addGap(63, 63, 63)
+                        .addGap(45, 45, 45)
                         .addComponent(jPanel62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(333, Short.MAX_VALUE))
         );
@@ -2222,6 +2372,16 @@ public class PageAccueil extends javax.swing.JFrame {
         jButton35.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton35ActionPerformed(evt);
+            }
+        });
+
+        res_annul.setText("Entrez l'id de la réservation");
+        res_annul.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                res_annulFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                res_annulFocusLost(evt);
             }
         });
 
@@ -2623,11 +2783,17 @@ public class PageAccueil extends javax.swing.JFrame {
                 ps.setString(5, Telephone.getText());
                 ps.setString(6, Adresse.getText());
                 ps.executeUpdate();            
-               JOptionPane.showMessageDialog(this, "Client ajouté");               
+               JOptionPane.showMessageDialog(this, "Client ajouté");  
+                Nom.setText("");
+                Prenoms.setText("");
+                Sexe.setSelectedItem("");
+                Telephone.setText("");
+                Adresse.setText("");
+                 getlastid_client();
              }        
             
         } catch (Exception ex) {
-         
+            JOptionPane.showMessageDialog(this,"Erreur de saisie");
             System.out.println(ex);           
         }
         
@@ -2643,7 +2809,10 @@ public class PageAccueil extends javax.swing.JFrame {
     }//GEN-LAST:event_jTabbedPane1MousePressed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-         
+         if(Client_rech.getText().equals("")){
+             JOptionPane.showMessageDialog(this,"Veuillez entrez l'id du client à rechercher");
+         }
+           
         String value = Client_rech.getText();
         try{
             DefaultTableModel model = new DefaultTableModel(new String[]{"Id_Client","Nom","Prenoms","Sexe","Telephone","Adresse"}, 0);
@@ -2695,8 +2864,11 @@ public class PageAccueil extends javax.swing.JFrame {
                 ps.setString(4, Prix_ajout.getText());
                
                 ps.executeUpdate();            
-               JOptionPane.showMessageDialog(this, "Chambre ajoutée");               
-                   
+               JOptionPane.showMessageDialog(this, "Chambre ajoutée");   
+               Categorie_ajout.setSelectedItem("");
+               Type_ajout.setSelectedItem("");
+               Prix_ajout.setText("");
+               getlastid_chambre();   
            }
         } catch (Exception ex) {
          
@@ -2725,7 +2897,14 @@ public class PageAccueil extends javax.swing.JFrame {
                 ps.setString(6, sp.format(date_sort.getDate()));
                
                 ps.executeUpdate();            
-               JOptionPane.showMessageDialog(this, "Réservation effectuée");               
+               JOptionPane.showMessageDialog(this, "Réservation effectuée"); 
+                Idres.setText("");
+                Idclient.setText("");
+                Idch.setText("");
+                date_ent.setDateFormatString("");
+                date_sort.setDateFormatString("");
+                nbr_jr.setText("");
+                getlastid_reservation();
                    
               }
         } catch (Exception ex) {
@@ -2736,72 +2915,76 @@ public class PageAccueil extends javax.swing.JFrame {
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
-        // PageAccueil.super.dispose();
-        new PageAccueil().setVisible(true);
+        
+        PageAccueil p=new PageAccueil();
+        p.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-         //PageAccueil.super.dispose();
-        new PageAccueil().setVisible(true);
+        PageAccueil p=new PageAccueil();
+        p.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        // TODO add your handling code here:
-        // PageAccueil.super.dispose();
-        new PageAccueil().setVisible(true);
+         PageAccueil p=new PageAccueil();
+        p.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
-        // TODO add your handling code here:
-       // PageAccueil.super.dispose();
-        new PageAccueil().setVisible(true);
+        PageAccueil p=new PageAccueil();
+        p.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-         //PageAccueil.super.dispose();
-        new PageAccueil().setVisible(true);
+        PageAccueil p=new PageAccueil();
+        p.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-         //PageAccueil.super.dispose();
-        new PageAccueil().setVisible(true);
+         PageAccueil p=new PageAccueil();
+        p.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
-        // PageAccueil.super.dispose();
-        new PageAccueil().setVisible(true);
+        PageAccueil p=new PageAccueil();
+        p.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        // TODO add your handling code here:
-        // PageAccueil.super.dispose();
-        new PageAccueil().setVisible(true);
+        PageAccueil p=new PageAccueil();
+        p.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
-        // TODO add your handling code here:
-        // PageAccueil.super.dispose();
-        new PageAccueil().setVisible(true);
+        PageAccueil p=new PageAccueil();
+        p.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton28ActionPerformed
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
-        // TODO add your handling code here:
-        // PageAccueil.super.dispose();
-        new PageAccueil().setVisible(true);
+         PageAccueil p=new PageAccueil();
+        p.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton31ActionPerformed
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
-        // TODO add your handling code here:
-         //PageAccueil.super.dispose();
-        new PageAccueil().setVisible(true);
+         PageAccueil p=new PageAccueil();
+        p.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton35ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        
+        if(chambre_rech.getText().equals("")){
+             JOptionPane.showMessageDialog(this,"Veuillez entrez l'id de la chambre à rechercher");
+       }        
         String value = chambre_rech.getText();
         try{
             DefaultTableModel model = new DefaultTableModel(new String[]{"Id_Chambre","Catégorie","Type","Prix_journalier"}, 0);
@@ -2836,7 +3019,10 @@ public class PageAccueil extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
-       String value = res_rech.getText();
+       if(res_rech.getText().equals("")){
+             JOptionPane.showMessageDialog(this,"Veuillez entrez l'id de la réservation à rechercher");
+       }
+        String value = res_rech.getText();
         try{
             DefaultTableModel model = new DefaultTableModel(new String[]{"Id_Réservation","Id_Client","Id_chambre","Date_entrée","Date_sortie","Nombre_de_jour"}, 0);
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -2881,6 +3067,9 @@ public class PageAccueil extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       if(client_supp.getText().equals("")){
+             JOptionPane.showMessageDialog(this,"Veuillez entrez l'id du client à supprimer");
+       }
         DefaultTableModel model = new DefaultTableModel(new String[]{"Id_Client","Nom","Prenoms","Sexe","Telephone","Adresse"}, 0);
         String id0 =client_supp.getText();
         try{
@@ -2923,6 +3112,9 @@ public class PageAccueil extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+            if(res_annul.getText().equals("")){
+             JOptionPane.showMessageDialog(this,"Veuillez entrez l'id de la réservation à annuler");
+       }
         DefaultTableModel model = new DefaultTableModel(new String[]{"Id_Réservation","Id_Client","Id_Chambre","Date_entrée","Date_sortie","Nombre_de_jour"}, 0);
         String id0 =res_annul.getText();
         try{
@@ -2967,39 +3159,337 @@ public class PageAccueil extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
        try{
+            DefaultTableModel model = new DefaultTableModel(new String[]{"Id_Client","Nom","Prenoms","Sexe","Telephone","Adresse"}, 0);
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/PROJET_LICENCE", "root", "");
-          /*  if(JOptionPane.showConfirmDialog (null, "Voulez-vous modifer la ligne?","la ligne",
-                    JOptionPane.YES_NO_OPTION)==JOptionPane.OK_OPTION){
+            int result = JOptionPane.showConfirmDialog(this, "Voulez-vous enregistrer les modifications?","Confirmation",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if(result == JOptionPane.YES_OPTION){
                 
                 PreparedStatement ps = con.prepareStatement("update Clients set nom = '" +Nom_mod.getText() + "',prenom = '" + Prenoms_mod.getText() + "',sexe = '" + Sexe_mod.getText() +
-                        "',telephone='" +Telephone_mod.getText()+ "',adresse = '" + Adresse_mod.getText() + " 'WHERE id_client ="+id.getText());                
-            }    */       
+                 "',telephone='" +Telephone_mod.getText()+ "',adresse = '" + Adresse_mod.getText() + " 'WHERE id_client ='"+id.getText()+"'"); 
+                 ps.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Modification effectuée");
+                 IdClient_mod.setText("");
+                 Nom_mod.setText("");
+                 Prenoms_mod.setText("");
+                 Sexe_mod.setText("");
+                 Telephone_mod.setText("");
+                 Adresse_mod.setText("");
+                model.setRowCount(0);
+                table6.setModel(model);
+              
+
+            }      
         }catch(HeadlessException | SQLException ex){
             System.err.println(ex.getMessage());
         } catch (ClassNotFoundException ex) { 
              Logger.getLogger(PageAccueil.class.getName()).log(Level.SEVERE, null, ex);
          }
-        try {  
-            DefaultTableModel model = new DefaultTableModel(new String[]{"Id_Client","Nom","Prenoms","Sexe","Telephone","Adresse"}, 0);
-            model.setRowCount(0);
-           
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/PROJET_LICENCE", "root", "");
-            String query = "select * from Clients";
-            PreparedStatement statement = con.prepareStatement(query);
-            ResultSet result = statement.executeQuery(query);
-            while(result.next()){
-               model.addRow(new Object [] {result.getString("id_client"),result.getString("nom"),result.getString("prenom"),
-                result.getString("sexe"),result.getString("telephone"),result.getString("adresse")});
-                table6.setModel(model);
-                }
-            }catch(SQLException ex) {
-                System.err.print(ex.getMessage());
-            }
+       
            
                                             
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        Idres.setText("");
+        Idclient.setText("");
+        Idch.setText("");
+        date_ent.setDateFormatString("");
+        date_sort.setDateFormatString("");
+        nbr_jr.setText("");
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void NomFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NomFocusGained
+         
+    }//GEN-LAST:event_NomFocusGained
+
+    private void NomFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NomFocusLost
+        
+    }//GEN-LAST:event_NomFocusLost
+
+    private void NomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NomMouseClicked
+
+    }//GEN-LAST:event_NomMouseClicked
+
+    private void PrenomsFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PrenomsFocusGained
+    
+    }//GEN-LAST:event_PrenomsFocusGained
+
+    private void PrenomsFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PrenomsFocusLost
+       
+    }//GEN-LAST:event_PrenomsFocusLost
+
+    private void jPanel30FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPanel30FocusGained
+
+    }//GEN-LAST:event_jPanel30FocusGained
+
+    private void TelephoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TelephoneFocusLost
+                            
+    }//GEN-LAST:event_TelephoneFocusLost
+
+    private void TelephoneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TelephoneFocusGained
+                                  
+    }//GEN-LAST:event_TelephoneFocusGained
+
+    private void AdresseFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_AdresseFocusGained
+        
+    }//GEN-LAST:event_AdresseFocusGained
+
+    private void AdresseFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_AdresseFocusLost
+               
+    }//GEN-LAST:event_AdresseFocusLost
+
+    private void SexeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SexeFocusGained
+         
+
+    }//GEN-LAST:event_SexeFocusGained
+
+    private void SexeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SexeFocusLost
+                 
+    }//GEN-LAST:event_SexeFocusLost
+
+    private void Client_rechFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Client_rechFocusGained
+        // TODO add your handling code here:
+        if(Client_rech.getText().equals("Entrez l'id du client à rechercher")){
+             Client_rech.setText("");
+             Client_rech.setForeground(new Color(153,0,153));     
+            }              
+    }//GEN-LAST:event_Client_rechFocusGained
+
+    private void Client_rechFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Client_rechFocusLost
+        // TODO add your handling code here:
+        if(Client_rech.getText().equals("")){
+             Client_rech.setText("Entrez l'id du client à rechercher");
+             Client_rech.setForeground(new Color(153,0,153));     
+            }       
+    }//GEN-LAST:event_Client_rechFocusLost
+
+    private void Client_rechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Client_rechActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Client_rechActionPerformed
+
+    private void client_suppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_client_suppFocusGained
+        // TODO add your handling code here:
+        if(client_supp.getText().equals("Entrez l'id du client à supprimer")){
+            client_supp.setText("");
+             client_supp.setForeground(new Color(153,0,153));     
+            }              
+    }//GEN-LAST:event_client_suppFocusGained
+
+    private void client_suppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_client_suppFocusLost
+        // TODO add your handling code here:
+        if(client_supp.getText().equals("")){
+            client_supp.setText("Entrez l'id du client à supprimer");
+             client_supp.setForeground(new Color(153,0,153));     
+            }     
+    }//GEN-LAST:event_client_suppFocusLost
+
+    private void chambre_rechFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_chambre_rechFocusGained
+        // TODO add your handling code here:
+         if(chambre_rech.getText().equals("Entrez l'id de la chambre")){
+             chambre_rech.setText("");
+             chambre_rech.setForeground(new Color(153,0,153));     
+            }       
+    }//GEN-LAST:event_chambre_rechFocusGained
+
+    private void chambre_rechFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_chambre_rechFocusLost
+        // TODO add your handling code here:
+        if(chambre_rech.getText().equals("")){
+             chambre_rech.setText("Entrez l'id de la chambre");
+             chambre_rech.setForeground(new Color(153,0,153));     
+            }       
+    }//GEN-LAST:event_chambre_rechFocusLost
+
+    private void res_rechFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_res_rechFocusGained
+        // TODO add your handling code here:
+        if(res_rech.getText().equals("Entrez l'id de la réservation")){
+             res_rech.setText("");
+             res_rech.setForeground(new Color(153,0,153));     
+            }   
+    }//GEN-LAST:event_res_rechFocusGained
+
+    private void res_rechFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_res_rechFocusLost
+        // TODO add your handling code here:
+         if(res_rech.getText().equals("")){
+             res_rech.setText("Entrez l'id de la réservation");
+             res_rech.setForeground(new Color(153,0,153));     
+            }   
+    }//GEN-LAST:event_res_rechFocusLost
+
+    private void res_annulFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_res_annulFocusGained
+        // TODO add your handling code here:
+        if(res_annul.getText().equals("Entrez l'id de la réservation")){
+             res_annul.setText("");
+             res_annul.setForeground(new Color(153,0,153));     
+            }   
+    }//GEN-LAST:event_res_annulFocusGained
+
+    private void res_annulFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_res_annulFocusLost
+        // TODO add your handling code here:
+        if(res_annul.getText().equals("")){
+             res_annul.setText("Entrez l'id de la réservation");
+             res_annul.setForeground(new Color(153,0,153));     
+            }  
+    }//GEN-LAST:event_res_annulFocusLost
+
+    private void NomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NomActionPerformed
+
+    private void PrenomsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrenomsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PrenomsActionPerformed
+
+    private void client_suppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_suppActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_client_suppActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+          if(id.getText().equals("")){
+             JOptionPane.showMessageDialog(this,"Veuillez entrez l'id du client à rechercher");
+         }
+           
+        String value = id.getText();
+        try{
+            DefaultTableModel model = new DefaultTableModel(new String[]{"Id_Client","Nom","Prenoms","Sexe","Telephone","Adresse"}, 0);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/PROJET_LICENCE", "root", "");
+            Statement ss = con.createStatement();
+            ResultSet rs = ss.executeQuery("Select *  from Clients where id_client='"+value+"'");
+              int count = 0;
+            while(rs.next()){
+               String Id_Client,Nom,Prenoms,Sexe,Telephone,Adresse;
+               Id_Client = rs.getString("id_client");
+               Nom = rs.getString("nom");
+               Prenoms = rs.getString("prenom");
+               Sexe = rs.getString("sexe");
+               Telephone= rs.getString("telephone");
+               Adresse = rs.getString("adresse");
+               model.addRow(new Object[]{Id_Client,Nom,Prenoms,Sexe,Telephone,Adresse});
+                table6.setModel(model);
+              count++;
+             
+            }
+            if(count==0){
+                JOptionPane.showMessageDialog(this, "Il n'y a pas de client possédant cet ID veuillez réessayer avec un autre ID");
+            }
+          
+        } catch (Exception ex) {
+            System.out.println(ex);           
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void table6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table6MouseClicked
+        
+        try{
+            int i = table6.getSelectedRow();
+            deplacerInfoClient(i);
+        }catch(Exception e){
+            System.err.print(e.getMessage());
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_table6MouseClicked
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+           if(chamRech_mod.getText().equals("")){
+             JOptionPane.showMessageDialog(this,"Veuillez entrez l'id de la chambre à rechercher");
+       }        
+        String value = chamRech_mod.getText();
+        try{
+            DefaultTableModel model = new DefaultTableModel(new String[]{"Id_Chambre","Catégorie","Type","Prix_journalier"}, 0);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/PROJET_LICENCE", "root", "");
+            Statement ss = con.createStatement();
+            ResultSet rs = ss.executeQuery("Select *  from Chambres where id_chambre='"+value+"'");
+              int count = 0;
+            while(rs.next()){
+               String Id_Chambre,Categorie,Type,Prix_journalier;
+               Id_Chambre = rs.getString("id_chambre");
+               Categorie= rs.getString("categorie");
+               Type = rs.getString("type");
+               Prix_journalier = rs.getString("prix");
+               model.addRow(new Object[]{Id_Chambre,Categorie,Type,Prix_journalier +"f"});
+                table7.setModel(model);
+              count++;
+             
+            }
+            if(count==0){
+                JOptionPane.showMessageDialog(this, "Il n'y a pas de chambre possédant cet ID veuillez réessayer avec un autre ID");
+            }
+          
+        } catch (Exception ex) {
+            System.out.println(ex);           
+        }
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void table7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table7MouseClicked
+         try{
+            int i = table7.getSelectedRow();
+            deplacerInfoChambre(i);
+        }catch(Exception e){
+            System.err.print(e.getMessage());
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    }//GEN-LAST:event_table7MouseClicked
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+         try{
+            DefaultTableModel model = new DefaultTableModel(new String[]{"Id_Chambre","Categorie","Type","Prix"}, 0);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/PROJET_LICENCE", "root", "");
+            int result = JOptionPane.showConfirmDialog(this, "Voulez-vous enregistrer les modifications?","Confirmation",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if(result == JOptionPane.YES_OPTION){
+                
+                PreparedStatement ps = con.prepareStatement("update Chambres set categorie = '" +Categorie_mod.getText() + "',type = '" + Type_mod.getText() + "',prix = '" + Prix_mod.getText() +
+                " 'WHERE id_chambre ='"+chamRech_mod.getText()+"'"); 
+                 ps.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Modification effectuée");
+                 IdChambre_mod.setText("");
+                 Categorie_mod.setText("");
+                 Type_mod.setText("");
+                 Prix_mod.setText("");
+        
+                model.setRowCount(0);
+                table7.setModel(model);
+              
+
+            }      
+        }catch(HeadlessException | SQLException ex){
+            System.err.println(ex.getMessage());
+        } catch (ClassNotFoundException ex) { 
+             Logger.getLogger(PageAccueil.class.getName()).log(Level.SEVERE, null, ex);
+         }
+       
+    }//GEN-LAST:event_jButton21ActionPerformed
+      public void deplacerInfoClient(int i){
+        try{
+            
+           IdClient_mod.setText(table6.getValueAt(i,0).toString());
+           Nom_mod.setText(table6.getValueAt(i,1).toString());
+           Prenoms_mod.setText(table6.getValueAt(i,2).toString());
+           Sexe_mod.setText(table6.getValueAt(i,3).toString());
+           Telephone_mod.setText(table6.getValueAt(i,4).toString());
+           Adresse_mod.setText(table6.getValueAt(i,5).toString());   
+        }catch(Exception ex){
+            System.err.print(ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex);
+        }
+      }
+    public void deplacerInfoChambre(int i){
+        try{
+            
+           IdChambre_mod.setText(table7.getValueAt(i,0).toString());
+           Categorie_mod.setText(table7.getValueAt(i,1).toString());
+           Type_mod.setText(table7.getValueAt(i,2).toString());
+           Prix_mod.setText(table7.getValueAt(i,3).toString());
+          
+        }catch(Exception ex){
+            System.err.print(ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex);
+        }
+      }
+    
     /**
      * @param args the command line arguments
      */
@@ -3039,7 +3529,9 @@ public class PageAccueil extends javax.swing.JFrame {
     private javax.swing.JTextField Adresse;
     private javax.swing.JTextField Adresse_mod;
     private javax.swing.JComboBox<String> Categorie_ajout;
+    private javax.swing.JTextField Categorie_mod;
     private javax.swing.JTextField Client_rech;
+    private javax.swing.JTextField IdChambre_mod;
     private javax.swing.JTextField IdChambres_ajout;
     private javax.swing.JTextField IdClient_mod;
     private javax.swing.JTextField Id_Client;
@@ -3051,11 +3543,14 @@ public class PageAccueil extends javax.swing.JFrame {
     private javax.swing.JTextField Prenoms;
     private javax.swing.JTextField Prenoms_mod;
     private javax.swing.JTextField Prix_ajout;
+    private javax.swing.JTextField Prix_mod;
     private javax.swing.JComboBox<String> Sexe;
     private javax.swing.JTextField Sexe_mod;
     private javax.swing.JTextField Telephone;
     private javax.swing.JTextField Telephone_mod;
     private javax.swing.JComboBox<String> Type_ajout;
+    private javax.swing.JTextField Type_mod;
+    private javax.swing.JTextField chamRech_mod;
     private javax.swing.JTextField chambre_rech;
     private javax.swing.JTextField client_supp;
     private com.toedter.calendar.JDateChooser date_ent;
@@ -3221,14 +3716,8 @@ public class PageAccueil extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField38;
     private javax.swing.JTextField jTextField42;
     private javax.swing.JTextField jTextField43;
     private javax.swing.JTextField jTextField44;
@@ -3242,6 +3731,7 @@ public class PageAccueil extends javax.swing.JFrame {
     private javax.swing.JTable table4;
     private javax.swing.JTable table5;
     private javax.swing.JTable table6;
+    private javax.swing.JTable table7;
     // End of variables declaration//GEN-END:variables
 
   /*  private void Connexion() {
