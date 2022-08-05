@@ -77,9 +77,11 @@ public class DemanderAuthentification extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       //DemanderAuthentification.super.dispose();
-         setVisible(false);
-        new Authentification().setVisible(true);
+         Authentification Auth =new Authentification();
+         Auth.setVisible(true);
+        this.setVisible(false);
+        
+                        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void WindowOpen(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_WindowOpen
