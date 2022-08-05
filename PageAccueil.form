@@ -347,6 +347,9 @@
                                   </Border>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jPanel30FocusGained"/>
+                              </Events>
 
                               <Layout>
                                 <DimensionLayout dim="0">
@@ -392,12 +395,51 @@
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="Nom">
+                                  <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="99" type="rgb"/>
+                                    </Property>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NomFocusGained"/>
+                                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NomFocusLost"/>
+                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="NomMouseClicked"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NomActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="Prenoms">
+                                  <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="99" type="rgb"/>
+                                    </Property>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="PrenomsFocusGained"/>
+                                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="PrenomsFocusLost"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PrenomsActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="Telephone">
+                                  <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="99" type="rgb"/>
+                                    </Property>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="TelephoneFocusGained"/>
+                                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="TelephoneFocusLost"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="Adresse">
+                                  <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="99" type="rgb"/>
+                                    </Property>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AdresseFocusGained"/>
+                                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AdresseFocusLost"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JComboBox" name="Sexe">
                                   <Properties>
@@ -409,6 +451,10 @@
                                       </StringArray>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="SexeFocusGained"/>
+                                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="SexeFocusLost"/>
+                                  </Events>
                                   <AuxValues>
                                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                                   </AuxValues>
@@ -548,14 +594,14 @@
                                               <Component id="jPanel35" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="56" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jPanel36" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
                                       <Component id="jLabel33" min="-2" pref="96" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="1005" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -743,6 +789,9 @@
                               </Layout>
                               <SubComponents>
                                 <Component class="javax.swing.JTextField" name="IdClient_mod">
+                                  <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
+                                  </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="Nom_mod">
                                   <Events>
@@ -861,6 +910,9 @@
                                     </Property>
                                     <Property name="text" type="java.lang.String" value="RECHERCHER"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="id">
                                 </Component>
@@ -900,6 +952,9 @@
                                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="table6MouseClicked"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -1074,6 +1129,17 @@
                                   </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="Client_rech">
+                                  <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="99" type="rgb"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="Entrez l&apos;id du client &#xe0; rechercher"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="Client_rechFocusGained"/>
+                                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="Client_rechFocusLost"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Client_rechActionPerformed"/>
+                                  </Events>
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1225,9 +1291,9 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                           <Component id="jButton1" min="-2" pref="127" max="-2" attributes="0"/>
-                                          <EmptySpace pref="59" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                           <Component id="client_supp" min="-2" pref="282" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                          <EmptySpace pref="38" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="32767" attributes="0"/>
@@ -1241,20 +1307,17 @@
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="client_supp" min="-2" pref="40" max="-2" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                                                  <Component id="jButton1" max="32767" attributes="0"/>
-                                              </Group>
+                                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jButton1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                              <Component id="client_supp" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jButton2" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                                               <Component id="jButton3" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="21" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -1283,6 +1346,14 @@
                                   </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="client_supp">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Entrez l&apos;id du client &#xe0; supprimer"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="client_suppFocusGained"/>
+                                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="client_suppFocusLost"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_suppActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JButton" name="jButton3">
                                   <Properties>
@@ -1825,12 +1896,17 @@
                                                   <Component id="jButton19" min="-2" pref="122" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="chambre_rech" min="-2" pref="195" max="-2" attributes="0"/>
-                                              <Component id="jButton20" min="-2" pref="123" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                                  <Component id="jButton20" min="-2" pref="123" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                                  <Component id="chambre_rech" min="-2" pref="187" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <EmptySpace pref="66" max="32767" attributes="0"/>
+                                          <EmptySpace pref="93" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -1887,6 +1963,13 @@
                                   </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="chambre_rech">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Entrez l&apos;id de la chambre"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="chambre_rechFocusGained"/>
+                                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="chambre_rechFocusLost"/>
+                                  </Events>
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2129,10 +2212,10 @@
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField34" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
-                                              <Component id="jTextField35" min="-2" pref="187" max="-2" attributes="0"/>
-                                              <Component id="jTextField36" min="-2" pref="187" max="-2" attributes="0"/>
-                                              <Component id="jTextField37" min="-2" pref="187" max="-2" attributes="0"/>
+                                              <Component id="IdChambre_mod" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
+                                              <Component id="Categorie_mod" min="-2" pref="187" max="-2" attributes="0"/>
+                                              <Component id="Type_mod" min="-2" pref="187" max="-2" attributes="0"/>
+                                              <Component id="Prix_mod" min="-2" pref="187" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace pref="28" max="32767" attributes="0"/>
                                       </Group>
@@ -2142,26 +2225,29 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                          <Component id="jTextField34" min="-2" max="-2" attributes="0"/>
+                                          <Component id="IdChambre_mod" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                          <Component id="jTextField35" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Categorie_mod" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                          <Component id="jTextField36" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Type_mod" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                          <Component id="jTextField37" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="Prix_mod" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace pref="53" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                               </Layout>
                               <SubComponents>
-                                <Component class="javax.swing.JTextField" name="jTextField34">
+                                <Component class="javax.swing.JTextField" name="IdChambre_mod">
+                                  <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
+                                  </Properties>
                                 </Component>
-                                <Component class="javax.swing.JTextField" name="jTextField35">
+                                <Component class="javax.swing.JTextField" name="Categorie_mod">
                                 </Component>
-                                <Component class="javax.swing.JTextField" name="jTextField36">
+                                <Component class="javax.swing.JTextField" name="Type_mod">
                                 </Component>
-                                <Component class="javax.swing.JTextField" name="jTextField37">
+                                <Component class="javax.swing.JTextField" name="Prix_mod">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2186,7 +2272,7 @@
                                               <Group type="102" attributes="0">
                                                   <Component id="jButton23" min="-2" pref="142" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jTextField38" min="-2" pref="167" max="-2" attributes="0"/>
+                                                  <Component id="chamRech_mod" min="-2" pref="167" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
                                                   <Component id="jButton21" min="-2" pref="116" max="-2" attributes="0"/>
@@ -2209,7 +2295,7 @@
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="jButton23" pref="30" max="32767" attributes="0"/>
-                                              <Component id="jTextField38" max="32767" attributes="0"/>
+                                              <Component id="chamRech_mod" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="32767" attributes="0"/>
                                       </Group>
@@ -2224,6 +2310,9 @@
                                     </Property>
                                     <Property name="text" type="java.lang.String" value="MODIFIER"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton21ActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JButton" name="jButton22">
                                   <Properties>
@@ -2243,8 +2332,11 @@
                                     </Property>
                                     <Property name="text" type="java.lang.String" value="RECHERCHER"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton23ActionPerformed"/>
+                                  </Events>
                                 </Component>
-                                <Component class="javax.swing.JTextField" name="jTextField38">
+                                <Component class="javax.swing.JTextField" name="chamRech_mod">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2276,44 +2368,21 @@
 
                                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                                   <SubComponents>
-                                    <Component class="javax.swing.JTable" name="jTable5">
+                                    <Component class="javax.swing.JTable" name="table7">
                                       <Properties>
                                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                          <Table columnCount="4" rowCount="4">
-                                            <Column editable="true" title="Id_Chambre" type="java.lang.Integer"/>
-                                            <Column editable="true" title="Cat&#xe9;gorie" type="java.lang.String"/>
-                                            <Column editable="true" title="Type" type="java.lang.String"/>
-                                            <Column editable="true" title="Prix_Journalier" type="java.lang.Integer"/>
-                                          </Table>
+                                          <Table columnCount="0" rowCount="4"/>
                                         </Property>
                                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                                          <TableColumnModel selectionModel="0">
-                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                              <Title/>
-                                              <Editor/>
-                                              <Renderer/>
-                                            </Column>
-                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                              <Title/>
-                                              <Editor/>
-                                              <Renderer/>
-                                            </Column>
-                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                              <Title/>
-                                              <Editor/>
-                                              <Renderer/>
-                                            </Column>
-                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                              <Title/>
-                                              <Editor/>
-                                              <Renderer/>
-                                            </Column>
-                                          </TableColumnModel>
+                                          <TableColumnModel selectionModel="0"/>
                                         </Property>
                                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="table7MouseClicked"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -2694,6 +2763,9 @@
                                     </Property>
                                     <Property name="text" type="java.lang.String" value="ANNULER"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton25ActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JButton" name="jButton26">
                                   <Properties>
@@ -2960,6 +3032,9 @@
                               </Layout>
                               <SubComponents>
                                 <Component class="javax.swing.JTextField" name="jTextField42">
+                                  <Properties>
+                                    <Property name="editable" type="boolean" value="false"/>
+                                  </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="jTextField43">
                                 </Component>
@@ -3184,15 +3259,16 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
                                               <Component id="jPanel62" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="354" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel56" min="-2" pref="84" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jPanel63" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   </Group>
@@ -3207,9 +3283,9 @@
                                               <Component id="jPanel63" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                                               <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                               <Component id="jPanel62" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -3245,8 +3321,8 @@
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jButton30" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="27" max="32767" attributes="0"/>
-                                          <Component id="res_rech" min="-2" pref="166" max="-2" attributes="0"/>
+                                          <EmptySpace pref="54" max="32767" attributes="0"/>
+                                          <Component id="res_rech" min="-2" pref="201" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
@@ -3289,6 +3365,13 @@
                                   </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="res_rech">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Entrez l&apos;id de la r&#xe9;servation"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="res_rechFocusGained"/>
+                                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="res_rechFocusLost"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JButton" name="jButton31">
                                   <Properties>
@@ -3513,6 +3596,13 @@
                                   </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="res_annul">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Entrez l&apos;id de la r&#xe9;servation"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="res_annulFocusGained"/>
+                                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="res_annulFocusLost"/>
+                                  </Events>
                                 </Component>
                               </SubComponents>
                             </Container>
