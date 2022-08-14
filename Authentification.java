@@ -216,6 +216,7 @@ public class Authentification extends javax.swing.JFrame {
                   JOptionPane.showMessageDialog(null, "Informations incorrectes");
                  }   
              }
+            con.close();
              }catch(Exception e){
                  e.printStackTrace();
              }
