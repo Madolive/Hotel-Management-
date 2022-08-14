@@ -60,14 +60,14 @@ public class DemanderAuthentification extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 0, 0,50));
         jButton1.setFont(new java.awt.Font("LM Roman Demi 10", 3, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("DEMANDER AUTHENTIFICATION");
+        jButton1.setText("ACCÉDER À LA PLATEFORME");
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 540, 570, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 540, 450, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/licenceproject/Images/CC.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 1360, 705));
